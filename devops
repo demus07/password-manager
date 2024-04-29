@@ -1,0 +1,94 @@
+Code for Addition of 3 numbers using Jenkins Pipeline:
+
+pipeline{
+    
+    agent any
+    
+    parameters{
+        //Define Parameters
+        string(name: 'number1', defaultValue: '', description: 'first number')
+        string(name: 'number2', defaultValue: '', description: 'second number')
+        string(name: 'number3', defaultValue: '', description: 'third number')
+        
+    }
+    
+    stages{
+        stage('Add Numbers'){
+            steps{
+                script{
+                    def num1 = number1.toInteger()
+                    def num2 = number2.toInteger()
+                    def num3 = number3.toInteger()
+                    
+                    def result = num1 + num2 + num3
+                    
+                    println "The sum is : $result"
+                }
+            }
+        }
+    }
+}
+
+
+Exp 2: Code for Addition of 2 numbers through jenkins (type in visual code)
+
+public class add{
+    public static void main(String[] args) {
+        
+        int a = 10;
+        int b = 20;
+
+        int sum = a + b;
+
+        System.out.println("Sum of a and b is: " + sum);
+    }
+}
+
+
+
+Exp 6: Seleninum Script:
+
+from selenium import webdriver
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+
+print("Sample test")
+driver = webdriver.Chrome()
+driver.get('https://www.google.com')
+
+search_box = driver.find_element(By.NAME,"q")
+
+search_box.send_keys("javatpoint")
+search_box.send_keys(Keys.ENTER)
+
+time.sleep(30)
+
+driver.close()
+print("Sample testÂ successful")
+
+
+
+Exp 8: Demonstrate use of docker commands to pull ubuntu official image, create a file and push updated image on Dockerhub:
+
+Commands to execute in cmd
+
+docker login
+
+docker pull hello-world
+
+For docker file creation(make in note pad and save in downloads):
+
+FROM ubuntu:20.04
+RUN apt -get update && apt -get install -y\curl\&&rm -rf /var/lib/apt/lists/*
+CMD ["echo","Hello-World"]
+
+docker build -t devops C:\Users\DELL\Downloads
+
+docker tag devops:latest aniketkadam24(username of docker desktop)/devops:latest
+
+docker push aniketkadam24/devops:latest
+
+
+
+
